@@ -1,6 +1,6 @@
 const config = {
-    url: "http://cachemoney-env.eba-vtpiesgf.us-east-1.elasticbeanstalk.com/",
-    // local: "http://localhost:8080/"
+    //url: "http://cachemoney-env.eba-vtpiesgf.us-east-1.elasticbeanstalk.com/",
+     local: "http://localhost:9000/",
     // remote: "http://cachemoney-env.eba-vtpiesgf.us-east-1.elasticbeanstalk.com/"
     
     url_img: "http://revature-cachemoney.s3-website-us-east-1.amazonaws.com/"
