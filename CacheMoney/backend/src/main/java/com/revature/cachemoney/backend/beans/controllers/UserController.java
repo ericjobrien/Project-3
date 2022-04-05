@@ -1,7 +1,11 @@
 package com.revature.cachemoney.backend.beans.controllers;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 
+import com.amdelamar.jotp.OTP;
+import com.amdelamar.jotp.type.Type;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.cachemoney.backend.beans.annotations.RequireJwt;
@@ -70,6 +74,19 @@ public class UserController {
     @PostMapping
     public Boolean postUser(@RequestBody User user) {
         return userService.postUser(user);
+    }
+
+
+    //TODO: (trying 2fa) find a way to send the QR code
+    @GetMapping("/registered")
+    public String qrCode(User user) throws UnsupportedEncodingException{
+        //User user;
+        String otpUrl = OTP.getURL(user.getSecret(),6, Type.TOTP, "cachemoney", user.getUsername());
+
+        String twoFaQrUrl = String.format("https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=%s",
+                URLEncoder.encode(otpUrl, "UTF-8"));
+
+        return twoFaQrUrl;
     }
 
     /**

@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.amdelamar.jotp.OTP;
 import com.revature.cachemoney.backend.beans.models.Account;
 import com.revature.cachemoney.backend.beans.models.User;
 import com.revature.cachemoney.backend.beans.repositories.AccountRepo;
@@ -16,6 +17,7 @@ import com.revature.cachemoney.backend.beans.security.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -77,6 +79,9 @@ public class UserService {
                 // changing to lowercase so that two usernames that are the same with different cases won't both be accepted
                 user.setEmail(user.getEmail().toLowerCase());
                 user.setUsername(user.getUsername().toLowerCase());
+
+                //TODO: trying 2fa
+                user.setSecret(OTP.randomBase32(20));
 
                 // save the user in the database
                 userRepo.save(user);

@@ -37,11 +37,16 @@ public class User {
 	@Column(name = "password", nullable = false)
 	private String password;
 
-	public User(String firstName, String lastName, String email, String password, String username) {
+	// TODO: trying 2fa
+	@Column(name = "secret")
+	private String secret;
+
+	public User(String firstName, String lastName, String email, String password, String username, String secret) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
 		this.username = username;
+		this.secret = secret;
 	}
 }
