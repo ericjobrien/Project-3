@@ -53,22 +53,22 @@ class UserServiceTest {
         nullValueUserList = new LinkedList<>();
         emptyStringUserList = new LinkedList<>();
 
-        User nullFirstName = new User(null, "Simpson", "homer.simpson@gmail.com", "abcd1234", "hmmdonut");
-        User nullLastName = new User("Lisa", null, "lisa.simpson@gmail.com", "abcd1234", "lisa_blues");
-        User nullEmail = new User("Bart", "Simpson", null, "abcd1234", "eatmyshorts");
-        User nullPassword = new User("Marge", "Simpson", "marge.simpson@gmail.com", null, "MmMmMmMm");
-        User nullUsername = new User("Maggie", "Simpson", "maggie.simpson@gmail.com", "abcd1234", null);
+        User nullFirstName = new User(null, "Simpson", "homer.simpson@gmail.com", "abcd1234", "hmmdonut", "secret");
+        User nullLastName = new User("Lisa", null, "lisa.simpson@gmail.com", "abcd1234", "lisa_blues", "secret");
+        User nullEmail = new User("Bart", "Simpson", null, "abcd1234", "eatmyshorts", "secret");
+        User nullPassword = new User("Marge", "Simpson", "marge.simpson@gmail.com", null, "MmMmMmMm", "secret");
+        User nullUsername = new User("Maggie", "Simpson", "maggie.simpson@gmail.com", "abcd1234", null, "secret");
         nullValueUserList.add(nullFirstName);
         nullValueUserList.add(nullLastName);
         nullValueUserList.add(nullEmail);
         nullValueUserList.add(nullPassword);
         nullValueUserList.add(nullUsername);
 
-        User emptyFirstName = new User("", "Griffin", "peter.griffin@gmail.com", "abcd1234", "birdistheword");
-        User emptyLastName = new User("Lois", "", "lois.griffin@gmail.com", "abcd1234", "therealest");
-        User emptyEmail = new User("Stewie", "Griffin", "", "abcd1234", "worlddomination");
-        User emptyPassword = new User("Chris", "Griffin", "chris.griffin@gmail.com", "", "crayon123");
-        User emptyUsername = new User("Brian", "Griffin", "brian.griffin@gmail.com", "abcd1234", "");
+        User emptyFirstName = new User("", "Griffin", "peter.griffin@gmail.com", "abcd1234", "birdistheword", "secret");
+        User emptyLastName = new User("Lois", "", "lois.griffin@gmail.com", "abcd1234", "therealest", "secret");
+        User emptyEmail = new User("Stewie", "Griffin", "", "abcd1234", "worlddomination", "secret");
+        User emptyPassword = new User("Chris", "Griffin", "chris.griffin@gmail.com", "", "crayon123", "secret");
+        User emptyUsername = new User("Brian", "Griffin", "brian.griffin@gmail.com", "abcd1234", "", "secret");
         emptyStringUserList.add(emptyFirstName);
         emptyStringUserList.add(emptyLastName);
         emptyStringUserList.add(emptyEmail);
@@ -84,11 +84,11 @@ class UserServiceTest {
     @BeforeEach
     void setupDB() {
         validUserList = new LinkedList<>();
-        User user1 = new User("Hank", "Hill", "hank.hill@gmail.com", "abcd1234", "propanemoney");
-        User user2 = new User("Peggy", "Hill", "peggy.hill@gmail.com", "abcd1234", "best_sub_teacher");
-        User user3 = new User("Bobby", "Hill", "bobby.hill@gmail.com", "abcd1234", "bobbytrill");
-        User user4 = new User("Kahn", "Souphanousinphone", "kahn@gmail.com", "abcd1234", "iamnumberone");
-        User user5 = new User("Dale", "Gribble", "rusty.shackleford@gmail.com", "abcd1234", "rusty123");
+        User user1 = new User("Hank", "Hill", "hank.hill@gmail.com", "abcd1234", "propanemoney", "secret1");
+        User user2 = new User("Peggy", "Hill", "peggy.hill@gmail.com", "abcd1234", "best_sub_teacher", "secret2");
+        User user3 = new User("Bobby", "Hill", "bobby.hill@gmail.com", "abcd1234", "bobbytrill", "secret3");
+        User user4 = new User("Kahn", "Souphanousinphone", "kahn@gmail.com", "abcd1234", "iamnumberone", "secret4");
+        User user5 = new User("Dale", "Gribble", "rusty.shackleford@gmail.com", "abcd1234", "rusty123", "secret5");
         validUserList.add(user1);
         validUserList.add(user2);
         validUserList.add(user3);
@@ -237,7 +237,7 @@ class UserServiceTest {
         @BeforeEach
         void addNewValidUserToList() {
             validUserList = new LinkedList<>();
-            User newUser = new User("Louanne", "Platter", "p.platter@gmail.com", "abcd1234", "Pplatter123");
+            User newUser = new User("Louanne", "Platter", "p.platter@gmail.com", "abcd1234", "Pplatter123", "secret");
             validUserList.add(newUser);
         }
 

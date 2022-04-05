@@ -1,6 +1,9 @@
 package com.revature.cachemoney.backend.beans.customAuthentication;
 
+
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
+
+
 import javax.servlet.http.HttpServletRequest;
 
 public class CustomAuthenticationDetails extends WebAuthenticationDetails{

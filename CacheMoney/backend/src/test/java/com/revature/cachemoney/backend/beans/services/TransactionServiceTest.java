@@ -64,7 +64,7 @@ class TransactionServiceTest {
 
         // initial conditions created.
         transactionList = new LinkedList<>();
-        user = new User("Hank", "Hill", "hank.hill@gmail.com", "abcd1234", "propanemoney");
+        user = new User("Hank", "Hill", "hank.hill@gmail.com", "abcd1234", "propanemoney","secret");
         userService.postUser(user);
 
         account = new Account("checking", "secret account");

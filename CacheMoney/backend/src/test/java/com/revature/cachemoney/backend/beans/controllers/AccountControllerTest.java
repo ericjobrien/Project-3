@@ -52,7 +52,7 @@ class AccountControllerTest {
     @BeforeEach
     void populateData() {
         // set a user for testing
-        user = new User("Jon", "Snow", "jonsnow@gmail.com", "theonetrueking", "jonsnowking");
+        user = new User("Jon", "Snow", "jonsnow@gmail.com", "theonetrueking", "jonsnowking", "secret");
         user.setUserId(1);
 
         // set an account for testing

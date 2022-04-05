@@ -24,14 +24,14 @@ class UserTest {
      */
     @Test
     void setUserId() {
-        User user = new User("user", "model", "email@gmail.com", "password", "userModel");
+        User user = new User("user", "model", "email@gmail.com", "password", "userModel", "genSecret");
         user.setUserId(1);
         assertEquals(1, user.getUserId());
     }
 
     @Test
     void setFirstName() {
-        User user = new User("user", "model", "email@gmail.com", "password", "usrModel");
+        User user = new User("user", "model", "email@gmail.com", "password", "usrModel", "genSecret");
         user.setFirstName("newFirstName");
         assertNotEquals("user", user.getFirstName());
         assertEquals("newFirstName", user.getFirstName());
@@ -39,7 +39,7 @@ class UserTest {
 
     @Test
     void setLastName() {
-        User user = new User("user", "model", "email@gmail.com", "password", "usrModel");
+        User user = new User("user", "model", "email@gmail.com", "password", "usrModel", "genSecret");
         user.setLastName("newLastName");
         assertNotEquals("model", user.getLastName());
         assertEquals("newLastName", user.getLastName());
@@ -47,7 +47,7 @@ class UserTest {
 
     @Test
     void setEmail() {
-        User user = new User("user", "model", "email@gmail.com", "password", "usrModel");
+        User user = new User("user", "model", "email@gmail.com", "password", "usrModel", "gentSecret");
         user.setEmail("newEmail@gmail.com");
         assertNotEquals("email@gmail.com", user.getEmail());
         assertEquals("newEmail@gmail.com", user.getEmail());
@@ -55,7 +55,7 @@ class UserTest {
 
     @Test
     void setUsername() {
-        User user = new User("user", "model", "email@gmail.com", "password", "usrModel");
+        User user = new User("user", "model", "email@gmail.com", "password", "usrModel", "genSecret");
         user.setUsername("newUsrModel");
         assertNotEquals("usrModel", user.getUsername());
         assertEquals("newUsrModel", user.getUsername());
@@ -63,7 +63,7 @@ class UserTest {
 
     @Test
     void setPassword() {
-        User user = new User("user", "model", "email@gmail.com", "password", "usrModel");
+        User user = new User("user", "model", "email@gmail.com", "password", "usrModel", "genSecret");
         user.setPassword("newPassword");
         assertNotEquals("password", user.getPassword());
         assertEquals("newPassword", user.getPassword());

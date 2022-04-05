@@ -54,7 +54,7 @@ class AccountTest {
 
     @Test
     void getUser() {
-        User user = new User("user", "model", "email@gmail.com", "password", "userModel");
+        User user = new User("user", "model", "email@gmail.com", "password", "userModel", "genSecret");
         Account account = new Account("checking", "new account");
 
         account.setUser(user);

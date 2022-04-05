@@ -67,8 +67,8 @@ class UserControllerTest {
     void populateData() {
         // create users for testing
         testUsers = new User[2];
-        testUsers[0] = new User("Hank", "Hill", "hank.hill@gmail.com", "abcd1234", "hankhill");
-        testUsers[1] = new User("Peggy", "Hill", "peggy.hill@gmail.com", "efgh5678", "peggyhill");
+        testUsers[0] = new User("Hank", "Hill", "hank.hill@gmail.com", "abcd1234", "hankhill", "secret1");
+        testUsers[1] = new User("Peggy", "Hill", "peggy.hill@gmail.com", "efgh5678", "peggyhill", "secret2");
 
         // create two tokens for testing
         testTokens = new String[2];
@@ -79,13 +79,13 @@ class UserControllerTest {
         loginUsers = new User[3];
 
         // valid username and password for hank in testUsers[0]
-        loginUsers[0] = new User(null, null, null, "abcd1234", "hankhill");
+        loginUsers[0] = new User(null, null, null, "abcd1234", "hankhill", "secret1");
 
         // invalid username for peggy in testUsers[1]
-        loginUsers[1] = new User(null, null, null, "efgh5678", "peggy123");
+        loginUsers[1] = new User(null, null, null, "efgh5678", "peggy123", "secret2");
 
         // invalid password for hank in testUsers[0]
-        loginUsers[2] = new User(null, null, null, "peggy", "hankhill");
+        loginUsers[2] = new User(null, null, null, "peggy", "hankhill", "secret2");
 
         // new account list
         accountList = new LinkedList<>();

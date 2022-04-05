@@ -70,7 +70,7 @@ class AccountServiceTest {
             }
             userService.deleteAllUsers();
         }
-        tempUser = new User("Hank", "Hill", "hankaccounthill@gmail.com", "abcd1234", "accounttest");
+        tempUser = new User("Hank", "Hill", "hankaccounthill@gmail.com", "abcd1234", "accounttest", "testSecret");
         tempUser.setUserId(1);
 
         // create accounts (no valid user model under attribute "user")
@@ -373,11 +373,11 @@ class AccountServiceTest {
                 userService.deleteAllUsers();
 
                 tempUser = new User("Hank", "Hill", "hankaccounthill@gmail.com", "abcd1234",
-                        "accounttest");
+                        "accounttest", "secrettest");
                 userService.postUser(tempUser);
             } else {
                 tempUser = new User("Hank", "Hill", "hankaccounthill@gmail.com", "abcd1234",
-                        "accounttest");
+                        "accounttest", "secrettest");
                 userService.postUser(tempUser);
             }
         }
